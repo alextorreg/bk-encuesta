@@ -105,7 +105,7 @@
                 const data = await response.json();
                 if (data.codePrefix) {
                     codePrefix = data.codePrefix;
-                }
+                } 
             } catch (error) {
                 console.error("Error al obtener configuración:", error);
             }
@@ -149,15 +149,15 @@
             }
         });
 
-        let tapCount = 0;
-        document.addEventListener("click", function() {
-            tapCount++;
-            if (tapCount >= 5) {
-                document.getElementById("configButton").style.display = "block";
-                tapCount = 0; // Reiniciar el contador
-            }
-            setTimeout(() => tapCount = 0, 2000); // Reiniciar después de 2 segundos si no hay más toques
-        });
+        //let tapCount = 0;
+      //  document.addEventListener("click", function() {
+        //    tapCount++;
+       //     if (tapCount >= 5) {
+       //         document.getElementById("configButton").style.display = "block";
+       //         tapCount = 0; // Reiniciar el contador
+      //      }
+       //     setTimeout(() => tapCount = 0, 2000); // Reiniciar después de 2 segundos si no hay más toques
+      //  });
     </script>
 </body>
 </html>
