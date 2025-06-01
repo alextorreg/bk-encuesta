@@ -97,11 +97,11 @@
     </div>
     
     <script>
-        let codePrefix = "BK"; // Valor por defecto
+        let codePrefix = "WH"; // Valor por defecto
 
         async function fetchConfig() {
             try {
-                const response = await fetch("/api/config.js");
+                const response = await fetch("/api/config");
                 const data = await response.json();
                 if (data.codePrefix) {
                     codePrefix = data.codePrefix;
