@@ -1,0 +1,51 @@
+<style>
+      .JFEScope .questionFocused   .advanceButtonContainer {transition:opacity .3s!important;visibility:unset;opacity:1}
+      .JFEScope .questionUnfocused .advanceButtonContainer, .advanceButtonContainer {transition:opacity .3s!important;visibility:hidden;opacity:0}
+      .Skin .Bipolar .bipolar-mobile-header, .Skin .Bipolar .desktop .bipolar-mobile-header, .Skin .Bipolar .mobile .ColumnLabelHeader {display: none}
+
+      /* Change color of question validation warnings */
+      .Skin .ValidationError.Warn {color: #e9730c;}
+
+      /* Hide mobile preview scrollbar for Chrome, Safari and Opera */
+      html.MobilePreviewFrame::-webkit-scrollbar { display: none; }
+
+      /* Hide mobile preview scrollbar for IE and Edge */
+      html.MobilePreviewFrame { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <style type="text/css">.accessibility-hidden{height:0;width:0;overflow:hidden;position:absolute;left:-999px}</style>
+    <div id="polite-announcement" class="accessibility-hidden" aria-live="polite" aria-atomic="true"></div>
+    <div id="assertive-announcement" class="accessibility-hidden" aria-live="assertive" role="alert" aria-atomic="true"></div>
+    <script type="text/javascript">
+      (function () {
+        var o = {};
+        try {
+          Object.defineProperty(o,'compat',{value:true,writable:true,enumerable:true,configurable:true});
+        } catch (e) {};
+        if (o.compat !== true || document.addEventListener === undefined) {
+          window.location.pathname = '/jfe/incompatibleBrowser';
+        }
+
+        var fv = document.createElement('link');
+        fv.rel = 'apple-touch-icon';
+        fv.href = "https://rbixm.qualtrics.com/CP/Graphic.php?IM=IM_6G38bpoNPOtygtg";
+        document.getElementsByTagName('head')[0].appendChild(fv);
+      })();
+      QSettings.ab = false;
+      document.title = "Qualtrics Survey | Qualtrics Experience Management";
+      
+      (function(s) {
+        QSettings.bootstrapSkin = s;
+        var sp = document.getElementById('skinPrefetch');
+        if (sp) {
+          sp.innerHTML = s;
+        }
+      })("<meta name=\"HandheldFriendly\" content=\"true\" />\n<meta name = \"viewport\" content = \"user-scalable = yes, maximum-scale=10, minimum-scale=1, initial-scale = 1, width = device-width\" />\n<div class='Skin'>\n\t<div id=\"Overlay\"></div>\n\t<div id=\"Wrapper\">\n\t\t<div id='ProgressBar'>{~ProgressBar~}</div>\n\t\t<div class='SkinInner'>\n\t\t\t<div id='LogoContainer'>\n\t\t\t\t<div id='Logo'></div>\n\t\t\t</div>\n\t\t\t<div id='HeaderContainer'>\n\t\t\t\t<div id=\"BrandingHeader\"><div col=\"col-sm-12\"><img id=\"BKLogo\" src=\"https://rbixm.qualtrics.com/CP/Graphic.php?IM=IM_6G38bpoNPOtygtg\" /> <img id=\"MYBKLogo\" src=\"https://rbixm.qualtrics.com/ControlPanel/Graphic.php?IM=IM_3b1ifTal48MVywC\" /></div>\n<link href=\"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css\" rel=\"stylesheet\" /><script src=\"https://code.jquery.com/ui/1.12.1/jquery-ui.js\"><\/script></div>\n\t\t\t\t<div id='Header'>{~Header~}</div>\n\t\t\t</div>\n\t\t\t<div id='SkinContent'>\n\t\t\t\t<div id='Questions'>{~Question~}</div>\n\t\t\t\t<div id='Buttons'>{~Buttons~}</div>\n\t\t\t\t\n\t\t\t</div>\n\t\t</div>\n\t\t<div id='Footer'>{~Footer~}</div>\n\t\t\n\t\t<div id='PushStickyFooter'></div>\n\t</div>\n\t<div id=\"Plug\" style=\"display:block !important;\"><a href=\"https://www.qualtrics.com/powered-by-qualtrics/?utm_source=internal%2Binitiatives&utm_medium=survey%2Bpowered%2Bby%2Bqualtrics&utm_content={~BrandID~}&utm_survey_id={~SurveyID~}\" target=\"_blank\" aria-label=\"{~PlugLabel~}\">{~Plug~}</a></div>\n</div>\n<script>Qualtrics.SurveyEngine.addOnload(Qualtrics.uniformLabelHeight);<\/script>\n\n<script>\n//TM6 Question Text Cell Padding\n\t//JFE\n\tPage.on('ready:imagesLoaded',function() {\n\t\tvar t = jQuery(\".QuestionText table\");\n\t  for (i=0; i<t.length; i++) {\n\t    if (t[i].cellPadding != undefined) {\n\t      var p = t[i].cellPadding + \"px\";\n\t      t.eq(i).find(\"th\").css(\"padding\",p);\n\t      t.eq(i).find(\"td\").css(\"padding\",p);\n\t    }\n\t  }\n\t});\n\t//SE\n\tjQuery(window).on('load',function() {\n\t\tif (jQuery(\"div\").hasClass(\"JFE\") == false) {\n\t    var t = jQuery(\".QuestionText table\");\n\t    for (i=0; i<t.length; i++) {\n\t      if (t[i].cellPadding != undefined) {\n\t        var p = t[i].cellPadding + \"px\";\n\t        t.eq(i).find(\"th\").css(\"padding\",p);\n\t        t.eq(i).find(\"td\").css(\"padding\",p);\n\t      }\n\t    }\n\t\t};\n\t});\n//TM21 iOS Text Box Width Fix\n//JFE\nPage.on('ready:imagesLoaded',function() {\n\tfunction isIE () {\n  \tvar myNav = navigator.userAgent.toLowerCase();\n  \treturn (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;\n\t}\n\tif (!isIE()) {\n\t\tvar mq = window.matchMedia( \"(max-width: 480px)\" );\n\t\tif (mq.matches == true) {\n\t\t\tjQuery(\".Skin .MC .TextEntryBox\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .ESTB .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .FORM .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .ML .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .PW .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .SL .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .FollowUp .InputText\").css(\"width\",\"100%\");\n\t\t};\n\t};\n});\n//SE\njQuery(window).on('load',function() {\n\tfunction isIE () {\n  \tvar myNav = navigator.userAgent.toLowerCase();\n  \treturn (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;\n\t}\n\tif (!isIE()) {\n\t\tvar mq = window.matchMedia( \"(max-width: 480px)\" );\n\t\tif (jQuery(\"div\").hasClass(\"JFE\") == false && mq.matches == true) {\n\t\t\tjQuery(\".Skin .MC .TextEntryBox\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .ESTB .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .FORM .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .ML .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .PW .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .SL .InputText\").css(\"width\",\"100%\");\n\t\t\tjQuery(\".Skin .TE .FollowUp .InputText\").css(\"width\",\"100%\");\n\t\t};\n\t};\n});\n<\/script>\n\n<style>.BackButton, .NextButton  {\n  color: white !important;\n}\n\n.Skin #LogoContainer {\n  margin-bottom: 0px !important;\n}\n\n.Skin #Logo img {\n    margin-left: -78px !important;\n}\n\n.Skin #HeaderContainer {\n\tbackground-color: #F5EBDC !important;\n\tpadding: 10px 0px 0 0px !important;\n}\n\n.Skin .MC .Inner .InnerInner .QuestionBody .TextEntryBox {\n    margin-top: 5px !important;\n    width: 100% !important;\n    padding: 10px 10px 10px 10px !important;\n}\n\t\n\t\n@media only screen and (min-width: 767px) {\n\t\n\t#BKLogo {\n\t\tmax-height:130px;\n\t\tmargin-left:-65px;\n\t}\n\n\t#MYBKLogo {\n\t\tfloat:right;\n\t\tmax-height:90px;\n\t\tmargin-top: 20px;\n\t}\t\n}\n\n@media only screen and (max-width: 767px) {\n\t\n\t#BKLogo {\n\t    max-height:130px;\n\t}\n\t\n\t#MYBKLogo {\n\t\tdisplay: none;\n\t}\t\n}</style>\n");
+      
+      
+      (function() {
+        var fv = document.createElement('link');
+        fv.type = 'image/x-icon';
+        fv.rel = 'icon';
+        fv.href = "https://rbixm.qualtrics.com/CP/Graphic.php?IM=IM_6G38bpoNPOtygtg";
+        document.getElementsByTagName('head')[0].appendChild(fv);
+      }());
