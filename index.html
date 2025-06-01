@@ -101,7 +101,7 @@
 
         async function fetchConfig() {
             try {
-                const response = await fetch("/api/config");
+                const response = await fetch("/api/config.js");
                 const data = await response.json();
                 if (data.codePrefix) {
                     codePrefix = data.codePrefix;
